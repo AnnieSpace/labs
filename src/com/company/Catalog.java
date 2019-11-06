@@ -55,6 +55,21 @@ public class Catalog {
         return whatWeFound + result.toString();
     }
 
+    String findAllTrackInThisAlbum(String album){
+
+        String whatWeFound = "Songs in the album " + album + "\n\n";
+
+        Catalog result = new Catalog();
+
+        for (int i = 0; i < catalog.size(); i++){
+            if (catalog.get(i).author.equalsIgnoreCase(album))
+                result.add(catalog.get(i));
+        }
+
+        return whatWeFound + result.toString();
+    }
+
+
     void sortByName(){
         catalog.sort(Comparator.comparing(AlbumTrack::getName));
     }
