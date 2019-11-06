@@ -63,4 +63,9 @@ public class Catalog {
         catalog.sort(Comparator.comparing(AlbumTrack::getAuthor));
     }
 
+    String deleteTrack(Track track){
+
+        return "The track successfully deleted.";
+    }
+
 }
