@@ -9,6 +9,10 @@ public class Catalog {
 
     Catalog(){
     }
+    
+    String sayHello(){
+        return "Hello, my friend! This is my new catalog. Welcome!";
+    }
 
     void add (AlbumTrack track){
         catalog.add(track);
