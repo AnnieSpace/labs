@@ -51,8 +51,8 @@ public class Main {
                     2016,
                     "Leaving");
 
-            System.out.println(catalog.findTrack(albumTrack1));
-            System.out.println(catalog.findTrack(albumTrack4));
+            System.out.println(catalog.delete(albumTrack1));
+            System.out.println(catalog.delete(albumTrack4));
 
         } catch (IOException e){
             System.out.println(e.getMessage());

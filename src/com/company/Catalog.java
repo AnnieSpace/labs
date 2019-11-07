@@ -77,11 +77,15 @@ public class Catalog {
         catalog.sort(Comparator.comparing(AlbumTrack::getAuthor));
     }
 
-    /*String delete(AlbumTrack track){
-
-
-        return "Track successfully deleted";
-    }*/
+    String delete(AlbumTrack track){
+        for (int i = 0; i < catalog.size(); i++){
+            if (catalog.get(i).equals(track)){
+                catalog.remove(i);
+                return "Track successfully deleted";
+            }
+        }
+        return "There is no such track in the catalog";
+    }
 
     @Override
     public String toString() {
