@@ -1,11 +1,11 @@
 package com.company;
 
+import java.io.IOException;
 import java.util.*;
 
 public class Catalog {
 
     List<AlbumTrack> catalog = new ArrayList<AlbumTrack>();
-    //List<AlbumTrack> result = new ArrayList<AlbumTrack>();
 
     Catalog(){
     }
@@ -30,6 +30,16 @@ public class Catalog {
 
         String whatWeFound = "Songs in the album " + album + "\n\n";
         return whatWeFound + cycle(album, 3).toString();
+    }
+
+    AlbumTrack findTrack(AlbumTrack track) throws IOException {
+        for (int i = 0; i < catalog.size(); i++){
+            if (catalog.get(i).equals(track)){
+                return track;
+            }
+        }
+        AlbumTrack emptyTrack = new AlbumTrack("null", "null", "null", 1, "null");
+        return emptyTrack;
     }
 
     Catalog cycle(String whatNeedToFind, int parameter) {
@@ -66,6 +76,12 @@ public class Catalog {
     void sortByAuthor(){
         catalog.sort(Comparator.comparing(AlbumTrack::getAuthor));
     }
+
+    /*String delete(AlbumTrack track){
+
+
+        return "Track successfully deleted";
+    }*/
 
     @Override
     public String toString() {
