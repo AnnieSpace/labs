@@ -1,5 +1,6 @@
 package com.company;
 
+import java.io.IOException;
 import java.util.*;
 
 public class Catalog {
@@ -11,6 +12,10 @@ public class Catalog {
 
     void add (AlbumTrack track){
         catalog.add(track);
+    }
+
+    String hello(){
+        return "Hello ! This is my new music catalog. Hope, that you like it :)";
     }
 
     String findByName(String name){
@@ -29,6 +34,16 @@ public class Catalog {
 
         String whatWeFound = "Songs in the album " + album + "\n\n";
         return whatWeFound + cycle(album, 3).toString();
+    }
+
+    AlbumTrack findTrack(AlbumTrack track) throws IOException {
+        for (int i = 0; i < catalog.size(); i++){
+            if (catalog.get(i).equals(track)){
+                return track;
+            }
+        }
+        AlbumTrack emptyTrack = new AlbumTrack("null", "null", "null", 1, "null");
+        return emptyTrack;
     }
 
     Catalog cycle(String whatNeedToFind, int parameter) {
@@ -66,6 +81,16 @@ public class Catalog {
         catalog.sort(Comparator.comparing(AlbumTrack::getAuthor));
     }
 
+    String delete(AlbumTrack track){
+        for (int i = 0; i < catalog.size(); i++){
+            if (catalog.get(i).equals(track)){
+                catalog.remove(i);
+                return "Track successfully deleted";
+            }
+        }
+        return "There is no such track in the catalog";
+    }
+
     @Override
     public String toString() {
         String cat = "Songs that are in the catalog:\n\n";
@@ -78,6 +103,7 @@ public class Catalog {
 
         }
         return cat;
+
     }
 
 }

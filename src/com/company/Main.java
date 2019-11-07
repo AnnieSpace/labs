@@ -44,6 +44,16 @@ public class Main {
             System.out.println(catalog.toString());
 
             System.out.println(catalog.findByName("Through Glass"));
+
+            AlbumTrack albumTrack4 = new AlbumTrack("Wooow",
+                    "Lol",
+                    "electronics",
+                    2016,
+                    "Leaving");
+
+            System.out.println(catalog.delete(albumTrack1));
+            System.out.println(catalog.delete(albumTrack4));
+
         } catch (IOException e){
             System.out.println(e.getMessage());
         }
