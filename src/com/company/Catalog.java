@@ -5,7 +5,6 @@ import java.util.*;
 public class Catalog {
 
     List<AlbumTrack> catalog = new ArrayList<AlbumTrack>();
-    //List<AlbumTrack> result = new ArrayList<AlbumTrack>();
 
     Catalog(){
     }
