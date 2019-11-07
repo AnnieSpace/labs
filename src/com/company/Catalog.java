@@ -14,6 +14,10 @@ public class Catalog {
         catalog.add(track);
     }
 
+    String hello(){
+        return "Hello ! This is my new music catalog. Hope, that you like it :)";
+    }
+
     String findByName(String name){
 
         String whatWeFound = "Search results by song title '" + name + "'\n\n";
